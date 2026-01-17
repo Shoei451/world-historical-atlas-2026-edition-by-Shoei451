@@ -36,6 +36,8 @@ function Region(a)
 			return 0;
 		case 'en':
 			return 1;
+		case 'zh':
+			return 2;
 		}
 	}
 	function set_default_name(a, offset)

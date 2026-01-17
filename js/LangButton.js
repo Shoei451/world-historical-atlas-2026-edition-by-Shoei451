@@ -4,6 +4,7 @@ function LangButton()
 {
 	const button_ja = document.getElementById('lang-ja');
 	const button_en = document.getElementById('lang-en');
+	const button_zh = document.getElementById('lang-zh');
 	let on_changed_handler = null;
 
 	function update()
@@ -12,14 +13,26 @@ function LangButton()
 		case 'ja':
 			button_ja.innerText = '日本語';
 			button_en.innerText = '英語';
+			button_zh.innerText = '中国語';
 			button_ja.style.fontWeight = 'bold';
 			button_en.style.fontWeight = '';
+			button_zh.style.fontWeight = '';
 			break;
 		case 'en':
 			button_ja.innerText = 'Japanese';
 			button_en.innerText = 'English';
+			button_zh.innerText = 'Chinese';
 			button_ja.style.fontWeight = '';
 			button_en.style.fontWeight = 'bold';
+			button_zh.style.fontWeight = '';
+			break;
+		case 'zh':
+			button_ja.innerText = '日文';
+			button_en.innerText = '英文';
+			button_zh.innerText = '中文';
+			button_ja.style.fontWeight = '';
+			button_en.style.fontWeight = '';
+			button_zh.style.fontWeight = 'bold';
 			break;
 		}
 		if (on_changed_handler) {
@@ -40,6 +53,11 @@ function LangButton()
 	button_en.addEventListener('mousedown', function()
 	{
 		data.lang = 'en';
+		update();
+	});
+	button_zh.addEventListener('mousedown', function()
+	{
+		data.lang = 'zh';
 		update();
 	});
 
